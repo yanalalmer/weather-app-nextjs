@@ -1,12 +1,14 @@
 'use client';
-import { fetchWeather } from '@/api';
-import { useEffect } from 'react';
+import { useFetchWeather } from '@/hooks';
 import { Navbar, Container } from '@/components';
+import { fetchWeather } from '@/api';
 
 export default function Home() {
-  useEffect(() => {
-    fetchWeather();
-  }, []);
+  const { weather, loading, error, errorMessage } = useFetchWeather(
+    fetchWeather,
+    'london'
+  );
+  console.log(weather);
   return (
     <main>
       <Container>
