@@ -1,3 +1,4 @@
+import { RecoilRootWrapper } from '@/state';
 import { Montserrat } from 'next/font/google';
 import '@/styles/globals.css';
 
@@ -14,7 +15,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${montserrat.className} bg-white text-black dark:bg-black dark:text-white main-transition`}
       >
-        {children}
+        <RecoilRootWrapper>{children}</RecoilRootWrapper>
       </body>
     </html>
   );
