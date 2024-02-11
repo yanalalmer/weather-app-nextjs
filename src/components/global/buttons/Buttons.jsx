@@ -1,4 +1,6 @@
 'use client';
+import { SunIcon, MoonIcon } from '@/public/icons';
+
 // main button
 export const Button = ({ type = 'submit', text = 'submit' }) => {
   return (
@@ -21,10 +23,10 @@ export const ThemeToggleButton = () => {
       onClick={toggleTheme}
     >
       <span className='w-8 h-8 block dark:hidden main-transition'>
-        sun icon
+        <SunIcon />
       </span>
       <span className='w-8 h-8 hidden dark:block main-transition'>
-        moon icon
+        <MoonIcon />
       </span>
     </div>
   );
