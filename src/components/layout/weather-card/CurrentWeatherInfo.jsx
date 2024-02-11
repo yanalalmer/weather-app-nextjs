@@ -17,7 +17,7 @@ export const CurrentWeatherInfo = () => {
   ];
 
   return (
-    <section className='w-1/2 grid grid-cols-3 grid-rows-2 gap-4 h-full'>
+    <section className='desktop:w-1/2 w-full grid grid-cols-3 grid-rows-2 gap-4 h-full'>
       {data.map((item, index) => (
         <div className='flex justify-center items-center flex-col' key={index}>
           <div className='font-bold'>{item?.value}</div>

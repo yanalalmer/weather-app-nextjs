@@ -25,7 +25,7 @@ export const WeatherCard = () => {
           {/* main date */}
           <MainDate />
           {/* current data */}
-          <section className='flex justify-center items-center w-full mt-16'>
+          <section className='flex justify-center items-center desktop:flex-row flex-col w-full mt-16'>
             {/* current temp */}
             <CurrentTemp />
             {/* current info */}
