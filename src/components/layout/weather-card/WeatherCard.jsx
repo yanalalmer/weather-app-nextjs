@@ -1,14 +1,11 @@
 'use client';
-import { Loading } from '@/components';
+import { Loading, MainDate } from '@/components';
 import { useFetchWeather } from '@/hooks';
 import { fetchWeather } from '@/api';
-import { formatDate, formatUnixTimeStamp } from '@/lib';
+import { formatUnixTimeStamp } from '@/lib';
 
 export const WeatherCard = () => {
   const cityName = 'london';
-  // formatting data
-  const currentDate = new Date();
-  const formattedDate = formatDate(currentDate);
   // hook
   const { weather, loading, error, errorMessage } = useFetchWeather(
     fetchWeather,
@@ -30,12 +27,7 @@ export const WeatherCard = () => {
       {weather && (
         <>
           {/* main date */}
-          <section className='w-full p-3'>
-            <h2 className='text-5xl font-semibold'>
-              {weather.name}, {weather.sys.country}
-            </h2>
-            <h3 className='text-2xl'>{formattedDate}</h3>
-          </section>
+          <MainDate />
           {/* current data */}
           <section className='flex justify-center items-center w-full mt-16'>
             {/* current temp */}
