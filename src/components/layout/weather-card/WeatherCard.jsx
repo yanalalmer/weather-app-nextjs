@@ -1,4 +1,5 @@
 'use client';
+import { Loading } from '@/components';
 import { useFetchWeather } from '@/hooks';
 import { fetchWeather } from '@/api';
 
@@ -11,7 +12,7 @@ export const WeatherCard = () => {
 
   return (
     <div className='flex flex-wrap desktop:max-w-[1420px] desktop:my-4 desktop:mx-auto'>
-      {loading && <h1>loading...</h1>}
+      {loading && <Loading />}
       {error && <h1>{errorMessage}</h1>}
       {weather && (
         <>
