@@ -2,7 +2,7 @@
 import { Loading } from '@/components';
 import { useFetchWeather } from '@/hooks';
 import { fetchWeather } from '@/api';
-import { formatDate } from '@/lib';
+import { formatDate, formatUnixTimeStamp } from '@/lib';
 
 export const WeatherCard = () => {
   const cityName = 'london';
@@ -14,6 +14,14 @@ export const WeatherCard = () => {
     fetchWeather,
     cityName
   );
+  const data = [
+    { value: Math.round(weather?.main?.temp_max) + '°', label: 'High' },
+    { value: Math.round(weather?.wind?.speed) + ' ' + 'Mph', label: 'Wind' },
+    { value: formatUnixTimeStamp(weather?.sys?.sunrise), label: 'Sunrise' },
+    { value: Math.round(weather?.main?.temp_min) + '°', label: 'Low' },
+    { value: weather?.main?.humidity + '%', label: 'Humidity' },
+    { value: formatUnixTimeStamp(weather?.sys?.sunset), label: 'Sunset' },
+  ];
 
   return (
     <div className='flex flex-wrap desktop:max-w-[1420px] desktop:my-4 desktop:mx-auto'>
@@ -37,8 +45,12 @@ export const WeatherCard = () => {
                 alt='weather icon'
               />
               <div>
-                <h1 className='text-6xl font-semibold mb-1'>21°</h1>
-                <h3 className='text-2xl'>Mostly sunny</h3>
+                <h1 className='text-6xl font-semibold mb-1'>
+                  {Math.round(weather.main.temp)}°
+                </h1>
+                <h3 className='text-2xl capitalize'>
+                  {weather.weather[0].description}
+                </h3>
               </div>
             </section>
             {/* current info */}
@@ -55,7 +67,7 @@ export const WeatherCard = () => {
             </section>
           </section>
           {/* rest of day data */}
-          <section className='w-full mt-16'>
+          {/* <section className='w-full mt-16'>
             <h3>Today's weather</h3>
             <div className='flex justify-between items-center mt-8'>
               {dayDate.map((item, index) => (
@@ -69,21 +81,13 @@ export const WeatherCard = () => {
                 </div>
               ))}
             </div>
-          </section>
+          </section> */}
         </>
       )}
     </div>
   );
 };
 
-const data = [
-  { value: '23°', label: 'High' },
-  { value: '7mph', label: 'Wind' },
-  { value: '05:27', label: 'Sunrise' },
-  { value: '0%', label: 'Rain' },
-  { value: '14°', label: 'Low' },
-  { value: '20:57', label: 'Sunset' },
-];
 const dayDate = [
   { time: '12:00', icon: 'cloudy', temp: '23°' },
   { time: '12:00', icon: 'cloudy', temp: '23°' },
