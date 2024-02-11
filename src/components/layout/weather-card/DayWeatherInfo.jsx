@@ -14,7 +14,7 @@ export const DayWeatherInfo = () => {
         {dayDate.map((item, index) => (
           <div
             key={index}
-            className='text-center desktop:p-8 p-6 desktop:min-w-40 tablet:min-w-32 min-w-16 h-18 rounded-md no-select'
+            className='text-center desktop:p-8 p-6 desktop:min-w-40 tablet:min-w-32 min-w-28 rounded-md no-select'
           >
             <h3>{formatTime(item.dt_txt)}</h3>
             <img
