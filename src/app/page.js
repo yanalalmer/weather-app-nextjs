@@ -1,3 +1,9 @@
+import { Navbar } from '@/components';
+
 export default function Home() {
-  return <main>this is my app</main>;
+  return (
+    <main>
+      <Navbar />
+    </main>
+  );
 }
