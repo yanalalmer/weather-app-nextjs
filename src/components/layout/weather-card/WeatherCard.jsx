@@ -4,6 +4,7 @@ import {
   MainDate,
   CurrentTemp,
   CurrentWeatherInfo,
+  DayWeatherInfo,
 } from '@/components';
 import { useFetchWeather } from '@/hooks';
 import { fetchWeather } from '@/api';
@@ -32,33 +33,9 @@ export const WeatherCard = () => {
             <CurrentWeatherInfo />
           </section>
           {/* rest of day data */}
-          {/* <section className='w-full mt-16'>
-            <h3>Today's weather</h3>
-            <div className='flex justify-between items-center mt-8'>
-              {dayDate.map((item, index) => (
-                <div
-                  key={index}
-                  className='text-center bg-blue/70 p-8 rounded-md'
-                >
-                  <h3>{item.time}</h3>
-                  <h3>{item.icon}</h3>
-                  <h3>{item.temp}</h3>
-                </div>
-              ))}
-            </div>
-          </section> */}
+          <DayWeatherInfo />
         </>
       )}
     </div>
   );
 };
-
-const dayDate = [
-  { time: '12:00', icon: 'cloudy', temp: '23°' },
-  { time: '12:00', icon: 'cloudy', temp: '23°' },
-  { time: '12:00', icon: 'cloudy', temp: '23°' },
-  { time: '12:00', icon: 'cloudy', temp: '23°' },
-  { time: '12:00', icon: 'cloudy', temp: '23°' },
-  { time: '12:00', icon: 'cloudy', temp: '23°' },
-  { time: '12:00', icon: 'cloudy', temp: '23°' },
-];

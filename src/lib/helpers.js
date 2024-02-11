@@ -16,3 +16,10 @@ export const formatUnixTimeStamp = (unixTimestamp) => {
     hour12: false,
   });
 };
+
+export const formatTime = (dateTimeString) => {
+  const date = new Date(dateTimeString);
+  const hour = date.getHours().toString().padStart(2, '0');
+  const formattedTime = `${hour}`;
+  return formattedTime;
+};
