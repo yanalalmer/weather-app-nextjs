@@ -1,5 +1,5 @@
 'use client';
-import { Loading, MainDate } from '@/components';
+import { Loading, MainDate, CurrentTemp } from '@/components';
 import { useFetchWeather } from '@/hooks';
 import { fetchWeather } from '@/api';
 import { formatUnixTimeStamp } from '@/lib';
@@ -31,20 +31,7 @@ export const WeatherCard = () => {
           {/* current data */}
           <section className='flex justify-center items-center w-full mt-16'>
             {/* current temp */}
-            <section className='flex items-center w-1/2 border-r-4'>
-              <img
-                src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@4x.png`}
-                alt='weather icon'
-              />
-              <div>
-                <h1 className='text-6xl font-semibold mb-1'>
-                  {Math.round(weather.main.temp)}°
-                </h1>
-                <h3 className='text-2xl capitalize'>
-                  {weather.weather[0].description}
-                </h3>
-              </div>
-            </section>
+            <CurrentTemp />
             {/* current info */}
             <section className='w-1/2 grid grid-cols-3 grid-rows-2 gap-4 h-full'>
               {data.map((item, index) => (
