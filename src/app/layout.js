@@ -11,7 +11,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang='en'>
-      <body className={montserrat.className}>{children}</body>
+      <body
+        className={`${montserrat.className} bg-white text-black dark:bg-black dark:text-white main-transition`}
+      >
+        {children}
+      </body>
     </html>
   );
 }
