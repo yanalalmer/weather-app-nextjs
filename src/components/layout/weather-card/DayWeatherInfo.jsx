@@ -10,16 +10,17 @@ export const DayWeatherInfo = () => {
   return (
     <section className='w-full mt-16'>
       <h3>Today's weather</h3>
-      <div className='flex items-center overflow-x-scroll mt-4'>
+      <div className='flex items-center mt-4 space-x-8 cursor-grab overflow-x-scroll'>
         {dayDate.map((item, index) => (
           <div
             key={index}
-            className='text-center desktop:p-8 p-6 desktop:min-w-40 tablet:min-w-32 min-w-16 h-18 mr-4 rounded-md'
+            className='text-center desktop:p-8 p-6 desktop:min-w-40 tablet:min-w-32 min-w-16 h-18 rounded-md no-select'
           >
             <h3>{formatTime(item.dt_txt)}</h3>
             <img
               src={`https://openweathermap.org/img/wn/${item.weather[0].icon}@4x.png`}
               alt='weather icon'
+              className='no-select'
             />
             <h3>{Math.round(item.main.temp)}°</h3>
           </div>
