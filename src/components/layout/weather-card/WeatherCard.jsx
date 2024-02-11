@@ -9,7 +9,7 @@ import { useFetchWeather } from '@/hooks';
 import { fetchWeather } from '@/api';
 
 export const WeatherCard = () => {
-  const cityName = 'london';
+  const cityName = 'madrid';
   // hook
   const { weather, loading, error, errorMessage } = useFetchWeather(
     fetchWeather,
