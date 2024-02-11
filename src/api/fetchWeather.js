@@ -9,7 +9,5 @@ const API = axios.create({
 export const fetchWeather = (cityName = 'amsterdam') => {
   const requestUrl = `${baseURL}?q=${cityName}&units=metric&appid=${process.env.NEXT_PUBLIC_WEATHER_KEY}`;
 
-  console.log('Request URL:', requestUrl);
-
-  return API.get(requestUrl).then((response) => console.log(response));
+  return API.get(requestUrl).then(({ data }) => console.log(data));
 };
