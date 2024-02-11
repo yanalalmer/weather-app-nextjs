@@ -1,3 +1,5 @@
+import { Button } from '@/components';
+
 export const SearchBox = ({
   type = 'test',
   placeholder = 'search city...',
@@ -11,7 +13,7 @@ export const SearchBox = ({
         name={name}
         className='p-2 focus:outline-none rounded-l-md border-[1px] border-grey capitalize'
       />
-      <button>submit</button>
+      <Button />
     </form>
   );
 };
