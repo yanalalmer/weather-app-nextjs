@@ -2,9 +2,14 @@
 import { Loading } from '@/components';
 import { useFetchWeather } from '@/hooks';
 import { fetchWeather } from '@/api';
+import { formatDate } from '@/lib';
 
 export const WeatherCard = () => {
   const cityName = 'london';
+  // formatting data
+  const currentDate = new Date();
+  const formattedDate = formatDate(currentDate);
+  // hook
   const { weather, loading, error, errorMessage } = useFetchWeather(
     fetchWeather,
     cityName
@@ -21,7 +26,7 @@ export const WeatherCard = () => {
             <h2 className='text-5xl font-semibold'>
               {weather.name}, {weather.sys.country}
             </h2>
-            <h3 className='text-2xl'>Monday 29 August</h3>
+            <h3 className='text-2xl'>{formattedDate}</h3>
           </section>
           {/* current data */}
           <section className='flex justify-center items-center w-full mt-16'>
