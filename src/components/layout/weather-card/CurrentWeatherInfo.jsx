@@ -5,15 +5,30 @@ import { formatUnixTimeStamp } from '@/lib';
 
 export const CurrentWeatherInfo = () => {
   const weather = useRecoilValue(mainState);
-  const { main, wind, sys } = weather.weather;
+  const currentWeatherInfo = weather.weather.list[0];
 
   const data = [
-    { value: Math.round(main?.temp_max) + '°', label: 'High' },
-    { value: Math.round(wind?.speed) + ' ' + 'Mph', label: 'Wind' },
-    { value: formatUnixTimeStamp(sys?.sunrise), label: 'Sunrise' },
-    { value: Math.round(main?.temp_min) + '°', label: 'Low' },
-    { value: main?.humidity + '%', label: 'Humidity' },
-    { value: formatUnixTimeStamp(sys?.sunset), label: 'Sunset' },
+    {
+      value: Math.round(currentWeatherInfo?.main?.temp_max) + '°',
+      label: 'High',
+    },
+    {
+      value: Math.round(currentWeatherInfo?.wind?.speed) + ' ' + 'Mph',
+      label: 'Wind',
+    },
+    {
+      value: currentWeatherInfo?.main?.pressure + ' ' + 'hPa',
+      label: 'pressure',
+    },
+    {
+      value: Math.round(currentWeatherInfo?.main?.temp_min) + '°',
+      label: 'Low',
+    },
+    { value: currentWeatherInfo?.main?.humidity + '%', label: 'humidity' },
+    {
+      value: Math.round(currentWeatherInfo?.visibility / 1000) + ' ' + 'km',
+      label: 'visibility',
+    },
   ];
 
   return (
@@ -21,7 +36,7 @@ export const CurrentWeatherInfo = () => {
       {data.map((item, index) => (
         <div className='flex justify-center items-center flex-col' key={index}>
           <div className='font-bold'>{item?.value}</div>
-          <div>{item?.label}</div>
+          <div className='capitalize'>{item?.label}</div>
         </div>
       ))}
     </section>
