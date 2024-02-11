@@ -1,4 +1,4 @@
-import { NavbarLogo, SearchBox } from '@/components';
+import { NavbarLogo, SearchBox, ThemeToggleButton } from '@/components';
 
 export const Navbar = () => {
   return (
@@ -6,7 +6,7 @@ export const Navbar = () => {
       <NavbarLogo />
       <div className='flex items-center gap-3 relative'>
         <SearchBox />
-        <div>toggle button</div>
+        <ThemeToggleButton />
       </div>
     </nav>
   );
