@@ -1,8 +1,12 @@
 'use client';
-import { Loading, MainDate, CurrentTemp } from '@/components';
+import {
+  Loading,
+  MainDate,
+  CurrentTemp,
+  CurrentWeatherInfo,
+} from '@/components';
 import { useFetchWeather } from '@/hooks';
 import { fetchWeather } from '@/api';
-import { formatUnixTimeStamp } from '@/lib';
 
 export const WeatherCard = () => {
   const cityName = 'london';
@@ -11,14 +15,6 @@ export const WeatherCard = () => {
     fetchWeather,
     cityName
   );
-  const data = [
-    { value: Math.round(weather?.main?.temp_max) + '°', label: 'High' },
-    { value: Math.round(weather?.wind?.speed) + ' ' + 'Mph', label: 'Wind' },
-    { value: formatUnixTimeStamp(weather?.sys?.sunrise), label: 'Sunrise' },
-    { value: Math.round(weather?.main?.temp_min) + '°', label: 'Low' },
-    { value: weather?.main?.humidity + '%', label: 'Humidity' },
-    { value: formatUnixTimeStamp(weather?.sys?.sunset), label: 'Sunset' },
-  ];
 
   return (
     <div className='flex flex-wrap desktop:max-w-[1420px] desktop:my-4 desktop:mx-auto'>
@@ -33,17 +29,7 @@ export const WeatherCard = () => {
             {/* current temp */}
             <CurrentTemp />
             {/* current info */}
-            <section className='w-1/2 grid grid-cols-3 grid-rows-2 gap-4 h-full'>
-              {data.map((item, index) => (
-                <div
-                  className='flex justify-center items-center flex-col'
-                  key={index}
-                >
-                  <div className='font-bold'>{item.value}</div>
-                  <div>{item.label}</div>
-                </div>
-              ))}
-            </section>
+            <CurrentWeatherInfo />
           </section>
           {/* rest of day data */}
           {/* <section className='w-full mt-16'>
