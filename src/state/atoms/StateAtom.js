@@ -5,7 +5,7 @@ export const mainState = atom({
   key: 'mainState',
   default: {
     weather: null,
-    loading: false,
+    loading: true,
     error: false,
     errorMessage: '',
   },
