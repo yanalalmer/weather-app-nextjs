@@ -8,9 +8,11 @@ import {
 } from '@/components';
 import { useFetchWeather } from '@/hooks';
 import { fetchWeather } from '@/api';
+import { useEffect, useState } from 'react';
 
 export const WeatherCard = () => {
-  const cityName = 'madrid';
+  const cityName = 'amsterdam';
+
   // hook
   const { weather, loading, error, errorMessage } = useFetchWeather(
     fetchWeather,

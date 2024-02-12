@@ -7,6 +7,7 @@ export * from './layout/weather-card/MainDate';
 export * from './layout/weather-card/CurrentTemp';
 export * from './layout/weather-card/CurrentWeatherInfo';
 export * from './layout/weather-card/DayWeatherInfo';
+export * from './layout/weather-card/WeatherIcon';
 // global
 export * from './global/search-box/SearchBox';
 export * from './global/buttons/Buttons';

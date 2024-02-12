@@ -1,5 +1,6 @@
 'use client';
 import { useRecoilValue } from 'recoil';
+import { WeatherIcon } from '@/components';
 import { mainState } from '@/state';
 import { formatTime } from '@/lib';
 
@@ -17,11 +18,7 @@ export const DayWeatherInfo = () => {
             className='text-center desktop:p-8 p-6 desktop:min-w-40 tablet:min-w-32 min-w-28 rounded-md no-select'
           >
             <h3>{formatTime(item.dt_txt)}</h3>
-            <img
-              src={`https://openweathermap.org/img/wn/${item.weather[0].icon}@4x.png`}
-              alt='weather icon'
-              className='no-select'
-            />
+            <WeatherIcon iconname={item.weather[0].icon} />
             <h3>{Math.round(item.main.temp)}°</h3>
           </div>
         ))}
