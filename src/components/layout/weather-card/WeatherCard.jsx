@@ -5,10 +5,10 @@ import {
   CurrentTemp,
   CurrentWeatherInfo,
   DayWeatherInfo,
+  WeekWeatherInfo,
 } from '@/components';
 import { useFetchWeather } from '@/hooks';
 import { fetchWeather } from '@/api';
-import { useEffect, useState } from 'react';
 
 export const WeatherCard = () => {
   const cityName = 'amsterdam';
@@ -36,6 +36,8 @@ export const WeatherCard = () => {
           </section>
           {/* rest of day data */}
           <DayWeatherInfo />
+          {/* 7 days forecast data */}
+          <WeekWeatherInfo />
         </>
       )}
     </div>

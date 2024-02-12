@@ -1,6 +1,6 @@
 'use client';
 import { useRecoilValue } from 'recoil';
-import { WeatherIcon } from '@/components';
+import { WeatherIcon, SectionTitle } from '@/components';
 import { mainState } from '@/state';
 import { formatTime } from '@/lib';
 
@@ -10,7 +10,7 @@ export const DayWeatherInfo = () => {
 
   return (
     <section className='w-full mt-16'>
-      <h3>Today's weather</h3>
+      <SectionTitle text="Today's Weather" />
       <div className='flex items-center mt-4 space-x-8 cursor-grab overflow-x-scroll'>
         {dayDate.map((item, index) => (
           <div
