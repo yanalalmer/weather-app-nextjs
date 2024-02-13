@@ -28,7 +28,7 @@ export const SearchBox = ({
         type={type}
         placeholder={placeholder}
         name={name}
-        className='p-2 focus:outline-none rounded-l-md border-[1px] border-grey capitalize'
+        className='p-2 focus:outline-none rounded-l-md border-[1px] border-grey capitalize text-black'
         onChange={handleChange}
       />
       <Button />
