@@ -1,7 +1,8 @@
+'use client';
 import { Button } from '@/components';
 
 export const SearchBox = ({
-  type = 'test',
+  type = 'text',
   placeholder = 'search city...',
   name = 'search',
 }) => {

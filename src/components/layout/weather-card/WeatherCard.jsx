@@ -1,4 +1,8 @@
 'use client';
+// state
+import { useRecoilValue } from 'recoil';
+import { cityState } from '@/state';
+// components
 import {
   Loading,
   MainDate,
@@ -7,16 +11,17 @@ import {
   DayWeatherInfo,
   WeekWeatherInfo,
 } from '@/components';
+// hook and api
 import { useFetchWeather } from '@/hooks';
 import { fetchWeather } from '@/api';
 
 export const WeatherCard = () => {
-  const cityName = 'amsterdam';
+  const city = useRecoilValue(cityState);
 
   // hook
   const { weather, loading, error, errorMessage } = useFetchWeather(
     fetchWeather,
-    cityName
+    city
   );
 
   return (
