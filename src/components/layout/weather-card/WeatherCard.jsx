@@ -27,7 +27,7 @@ export const WeatherCard = () => {
   return (
     <div className='flex flex-wrap desktop:max-w-[1420px] desktop:my-4 desktop:mx-auto'>
       {loading && <Loading />}
-      {error && <h1>{errorMessage}</h1>}
+      {error && <h1>{errorMessage} please enter a valid city name</h1>}
       {weather && (
         <>
           {/* main date */}
