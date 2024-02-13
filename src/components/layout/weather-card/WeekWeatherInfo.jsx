@@ -5,6 +5,7 @@ import { mainState } from '@/state';
 
 export const WeekWeatherInfo = () => {
   const weather = useRecoilValue(mainState);
+  console.log(weather);
   return (
     <section className='w-full mt-16'>
       <SectionTitle text='Next 7 days' />
