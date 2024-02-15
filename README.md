@@ -132,7 +132,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 ## Contact
 
-Yanal Almir - [@website](www.yanal.nl) - yanalalmer@yahoo.com
+Yanal Almir - [@website](https://www.yanal.nl) - yanalalmer@yahoo.com
 
 Project Link: [https://github.com/yanalalmer/weather-app-nextjs](https://github.com/yanalalmer/weather-app-nextjs)
 
