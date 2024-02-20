@@ -14,7 +14,6 @@
     <br />
     <br />
     <a href="https://main--weatherappnextjs.netlify.app/">View Demo</a>
-    ·
   </p>
 </div>
 
